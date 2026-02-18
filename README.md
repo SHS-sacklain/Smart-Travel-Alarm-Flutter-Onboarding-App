@@ -1,16 +1,52 @@
-# onboarding_app
+# 🌍 Smart Travel Alarm — Flutter Onboarding App
 
-A new Flutter project.
+A beautifully designed Flutter onboarding app with location access and alarm/notification features, built to match the provided Figma design.
 
-## Getting Started
+---
+## 🗂️ Project Structure
 
-This project is a starting point for a Flutter application.
+```
+lib/
+├── common_widgets/
+│   └── alarm_card.dart           # Reusable alarm list item
+├── constants/
+│   ├── app_colors.dart           # Color palette from Figma
+│   ├── app_text_styles.dart      # Typography styles
+│   └── app_strings.dart          # All string constants + onboarding data
+├── features/
+│   ├── onboarding/
+│   │   └── onboarding_screen.dart
+│   ├── location/
+│   │   └── location_screen.dart
+│   └── home/
+│       ├── alarm_model.dart      # Hive model
+│       ├── alarm_model.g.dart    # Generated adapter
+│       ├── alarm_provider.dart   # ChangeNotifier state
+│       └── home_screen.dart
+├── helpers/
+│   ├── location_service.dart     # Geolocator + Geocoding
+│   └── notification_service.dart # flutter_local_notifications
+└── main.dart
 
-A few resources to get you started if this is your first Flutter project:
+---
+## 📦 Packages Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Package 
+provider
+geolocator
+geocoding
+permission_handler
+flutter_local_notifications
+timezone
+ hive + hive_flutter
+smooth_page_indicator
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🎨 Design
+
+Figma: [Test-01 Design File](https://www.figma.com/design/FbHsUNPJ3tRWWdvh32cmh0/Test-01-%7C%7C-Figma?node-id=2001-183)
+
+---
+## 📋 Notes
+
+- Long-press an alarm card to delete it
+- Alarms are persisted using Hive and survive app restarts
